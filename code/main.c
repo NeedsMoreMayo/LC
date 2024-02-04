@@ -53,6 +53,13 @@ int main(void){
     while (1){
 		TOGGLE_LED();
 		_delay_ms(1000);
+
+		LCD1602_send_command(CLEAR_DISPLAY);
+		_delay_us(100);
+		LCD1602_send_command(RETURN_HOME);
+		_delay_us(100);
+		LCD1602_send_string("Testing 123");
+		_delay_us(100);
     }
 }
 
